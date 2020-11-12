@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 7, 2020 12:25:04 PM by Hibernate Tools 5.3.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="enablecommerce" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.ec.reverseEngineering.EcProductProperty" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="ec_product_property">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.ec.reverseEngineering.EcProduct" embed-xml="true" fetch="select" insert="true" name="ecProduct" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="ProductID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="Name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="value" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="Value" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
